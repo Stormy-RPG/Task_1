@@ -31,3 +31,5 @@ count_sym('abcdefgh' * 1_000_000)
 end = time.time()
 
 print('Время выполнения программы:', end - start)
+
+# test
