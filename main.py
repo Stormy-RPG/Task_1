@@ -1,36 +1,20 @@
-# Анализ сложности алгоритмов
+# На вход подается строка, все символы находятся в нижнем регистре и без пробелов. 
+# Напишите функцию, которая будет возвращать True, если строка является палиндромом и False, если строка палиндромом не является.
 
-# Счётчик уникальных символов в строке
-# На вход строка. Функция считает, сколько раз в строке встретился каждый из символов.
+# Функция проверки на палиндром
+def is_palindrome(line):
+    if line == line[::-1]:
+        return True
+    else:
+        return False
+    
+# Примеры работы функции
+print('1.', is_palindrome('лепсспел'))
+print('2.', is_palindrome('helloworld'))
+print('3.', is_palindrome('atta'))
+print('4.', is_palindrome('бабочка'))
+print('5.', is_palindrome('ttttt'))
+print('6.', is_palindrome('ghugigivdh'))
 
-# создаём функйию для подсчёта уникальных символов
-# line - строка, с которой мы работаем
-
-# вызываем для времени
-import time
-
-def count_sym(line):
-    # set() - функция, возвращающая множество (тип данных, в котором нет повторяющихся элементов)
-    for sym in set(line):
-        # counter - счётчик, сколько раз встретился символ в строке
-        counter = 0
-        for sub_sym in line:
-            if sym == sub_sym:
-                counter += 1
-        print(sym, counter)
-
-# замеряем время начала
-start = time.time()
-
-# line = 'aabbcccddddddeeee'
-# print(set(line))
-
-count_sym('abcdefgh' * 1_000_000)
-
-# замеряем время конца работы программы
-end = time.time()
-
-print('Время выполнения программы:', end - start)
-
-# test
-# 123
+# Пример работы функции при вводе с клавиатуры
+# print(is_palindrome(input('Введите слово для проверки: ')))
